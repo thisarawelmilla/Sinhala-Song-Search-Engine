@@ -2,9 +2,10 @@
 The songs can be searched by a search engine with 8 metadata. The song title, name of the singer, name of the composer, name of the music producer, lyrics, beat, genre and rating. 
 An interface is also available supporting basic functions to enhav]nce the user experience. Search bar, facets in checkbox format, and search results are provided along with the user interface.
 The search engine is implemented with the elastic search engine and the python client.
+![Image](img/interface.png)
 
 ## System Architecture
-![Image](img/interface.png)
+![Image](img/system_architecture.png)
 
 ## Indexing          
 I create specific mapping focusing on this scenario. I used positional indexing, as the order of the word occurrence is important especially for the song title and the lyrics.
