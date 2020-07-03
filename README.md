@@ -4,7 +4,7 @@ An interface is also available supporting basic functions to enhav]nce the user 
 The search engine is implemented with the elastic search engine and the python client.
 
 ## System Architecture
-![Image](https://github.com/thisarawelmilla/IR_project-song_search_engine/commit/4acbfd46e9fbbe423766b75297bb2ae6a61ffa58#diff-0a32a8e4d56c300842afdb0d1cb4d8bd)
+![Image](img/facets_example.png)
 
 ## Indexing          
 I create specific mapping focusing on this scenario. I used positional indexing, as the order of the word occurrence is important especially for the song title and the lyrics.
