@@ -1,0 +1,18 @@
+{'Current': 'වර්තමාන' ,
+'Songs': 'ගීත' ,
+'Group': 'කණ්' ,
+'Request': '' ,
+'Classics': 'සම්භාව්‍ය' ,
+'Old': 'පැරණි' ,
+'Pops': 'පොප්' ,
+'Golden': 'ස්වර්ණ' ,
+'Duets': 'යුගල' ,
+'Oldies': 'පැරණි' ,
+'Inspirational': 'දිරිගන්වන' ,
+'New': 'අලුත්' ,
+'Movie': 'චිත්‍රපට' ,
+'Calypso': 'කැලිප්සෝ',
+'Kids': 'ළමා',
+'Pop' : 'පොප්'
+}
+

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Create two unequal columns that floats next to each other */
+.column {
+  float: left;
+  padding: 10px;
+  height: 1500px;
+ /* Should be removed. Only for demonstration */
+}
+
+.left {
+  width: 20%;
+}
+
+.right {
+  width: 80%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+</style>
+  <head>
+
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Pacifico">
+    <link rel="icon" href="http://obj-cache.cloud.ruanbekker.com/favicon.ico">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+
+    <title>Bookmarks Search</title>
+
+  </head>
+
+
+<body>
+
+  <div class="column left" style="background-color:#154360">
+   <style type="text/css">
+      p { 
+        color:#FDFEFE; 
+	}
+      form { 
+        color:#FDFEFE; 
+	}
+    </style>
+    <p>
+        <center>
+             <font size="6" style="color:#FDFEFE">වැඬිදුර සොයන්න ...</font>
+        </center>
+    </p>
+<form action="/search/results" method="post">
+
+
+    <p><font size="4">කාණ්ඬය</font></p>
+    <p>
+
+  		<input type="checkbox" name="genre" value="වර්තමාන"> වර්තමාන ගීත<br>  
+  		<input type="checkbox" name="genre" value="සම්භාව්‍ය"> සම්භාව්‍ය ගීත<br>
+  		<input type="checkbox" name="genre" value="පැරණි"> පැරණි ගීත<br>
+  		<input type="checkbox" name="genre" value="පොප්"> පොප් ගීත<br>
+  		<input type="checkbox" name="genre" value="ස්වර්ණ"> ස්වර්ණ ගීත<br>
+  		<input type="checkbox" name="genre" value="යුගල"> යුගල ගීත<br>
+  		<input type="checkbox" name="genre" value="දිරිගන්වන"> දිරිගන්වන ගීත<br>
+  		<input type="checkbox" name="genre" value="චිත්‍රපට"> චිත්‍රපට ගීත<br>
+  		<input type="checkbox" name="genre" value="කැලිප්සෝ"> කැලිප්සෝ ගීත<br>
+  		<input type="checkbox" name="genre" value="ළමා"> ළමා ගීත</input>
+
+    </p>
+
+    <p>
+
+    <p>
+
+        <font size="4">ජනප්‍රියත්වය</font></p>
+    <p>
+  		<input type="checkbox" name="popularity" value="ඉතා අඩු"> ඉතා අඩු<br>
+  		<input type="checkbox" name="popularity" value="අඩු"> අඩු<br>
+  		<input type="checkbox" name="popularity" value="සාමාන්‍ය"> සාමාන්‍ය<br>
+  		<input type="checkbox" name="popularity" value="ඉහළ"> ඉහළ<br>
+  		<input type="checkbox" name="popularity" value="ඉතා ඉහළ"> ඉතා ඉහළ<br>
+	
+    </p>
+
+  </div>
+  <div class="column right" >
+    <div class="container">
+    <div style="background:transparent !important" class="jumbotron">
+      <div style="font-family: 'Pacifico', cursive;">
+        <p>
+          <center>
+          <font size="8">ඔබේ ප්‍රියතම ගීත සොයන්න ....</font>
+          </center>
+        </p>
+      </div>
+    </div>
+
+    <div class="input-group">
+      <input type="text" class="form-control input-lg" name="input" placeholder="සොයන්න"  autofocus>
+      <div class="input-group-btn">
+        <button class="btn btn-primary btn-lg" type="submit">
+          <i class="glyphicon glyphicon-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+
+  <center>
+      <font size="3">ගැලපීම්: {{ res[1] }} </font>
+  </center>
+
+  <center>
+      <font size="3"> {{ res[0] }} </font>
+  </center>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ගීතය</th>
+        <th>ගායකයා</th>
+        <th>පද රචකයා</th>
+        <th>තනු නිර්මාණය</th>
+        <th>පද රවනය</th>
+        <th>තාලය</th>
+        <th>කාණ්ඬය</th>
+        <th>ජනප්‍රියත්වය</th>
+      </tr>
+    </thead>
+
+{% for hit in res[2] %}
+    <tbody>
+      <tr>
+        <th scope="row"><a href="{{ hit[0] }}">{{ hit[0] }}</a></th>
+	  <td>{{ hit[1] }}</td>
+          <td>{{ hit[2] }}</td>
+          <td>{{ hit[3] }}</td>
+          <td>{{ hit[4] }}</td>
+	  <td>{{ hit[5] }}</td>
+          <td>{{ hit[6] }}</td>
+          <td>{{ hit[7] }}</td>
+      </tr>
+    </tbody>
+{% endfor %}
+  </table>
+
+
+      </div>
+    </div>
+  </div>
+
+
+</body>
+</html>
+
